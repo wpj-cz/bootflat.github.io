@@ -10,7 +10,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     meta: {
-      defaultPath: 'bootflat'
+      defaultPath: 'bootflat',
+      installPath: '../../engine/admin/static/bootflat'
     },
 
     banner: '/*\n * <%= pkg.name %> <%= pkg.version %>\n' +
@@ -32,32 +33,13 @@ module.exports = function(grunt) {
     clean: {
       dist: ['<%= meta.defaultPath %>/css/']
     },
-    uglify: {
-      options: {
-          banner: '<%= banner %>',
-          sourceMap: true,
-          sourceMapIncludeSources: true
-      },
-      dist: {
-        files: {
-          'js/site.min.js': [
-            'js/jquery-1.10.1.min.js',
-            'js/bootstrap.min.js',
-            '<%= meta.defaultPath %>/js/icheck.min.js',
-            '<%= meta.defaultPath %>/js/jquery.fs.stepper.min.js',
-            '<%= meta.defaultPath %>/js/jquery.fs.selecter.min.js',
-            'js/application.js'
-          ]
-        }
-      }
-    },
     csscomb: {
       options: {
         config: '<%= meta.defaultPath %>/scss/.csscomb.json'
       },
       dist: {
         files: {
-          '<%= meta.defaultPath %>/css/<%= pkg.name %>.css': 'bootflat/css/<%= pkg.name %>.css'
+          '<%= meta.installPath %>/css/<%= pkg.name %>.css': 'bootflat/css/<%= pkg.name %>.css'
         }
       }
     },
@@ -68,19 +50,14 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'css/site.min.css': [
-            'css/bootstrap.min.css',
-            '<%= meta.defaultPath %>/css/<%= pkg.name %>.css',
-            'css/site.css'
-          ],
-          '<%= meta.defaultPath %>/css/<%= pkg.name %>.min.css': '<%= meta.defaultPath %>/css/<%= pkg.name %>.css'
+          '<%= meta.installPath %>/css/<%= pkg.name %>.min.css': '<%= meta.installPath %>/css/<%= pkg.name %>.css'
         }
       }
     },
     sass: {
       dist: {
         files: {
-          '<%= meta.defaultPath %>/css/<%= pkg.name %>.css': '<%= meta.defaultPath %>/scss/<%= pkg.name %>.scss'
+          '<%= meta.installPath %>/css/<%= pkg.name %>.css': '<%= meta.defaultPath %>/scss/<%= pkg.name %>.scss'
         },
         options: {
           banner: '<%= banner %>',
@@ -131,8 +108,7 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   grunt.registerTask('task-css', ['sass', 'csscomb', 'cssmin']);
-  grunt.registerTask('task-js', ['uglify']);
-  grunt.registerTask('task', ['clean', 'task-css', 'task-js']);
+  grunt.registerTask('task', ['clean', 'task-css']);
   grunt.registerTask('build', ['task']);
   grunt.registerTask('default', ['task']);
   grunt.registerTask('test', ['task', 'csslint', 'validation']);

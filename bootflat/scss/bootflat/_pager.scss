@@ -16,15 +16,24 @@ $paper-font-color-disabled:               $lightgray-dark !default;
    * --------------------------------------------------
    */
   .pager {
+      margin:0;
 
     & li > a,
-    & li > span {
+    & li > span,
+    & li > input {
       color: $paper-font-color;
       background-color: $paper-background-color;
       border-color: $paper-background-color;
+      border:1px solid #8cc152;
+      border-radius:20px;
+      padding:5px 14px;
+      display:inline-block;
+      margin:0 5px;
     }
     & li > a:hover,
-    & li > a:focus {
+    & li > a:focus,
+    & li > input:hover,
+    & li > input:focus {
       background-color: $paper-background-color-hover;
       border-color: $paper-background-color-hover; 
     }

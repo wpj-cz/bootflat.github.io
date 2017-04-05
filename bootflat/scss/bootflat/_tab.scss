@@ -103,7 +103,7 @@ $tab-border-color:                     $mediumgray-light !default;
       &.nav-justified > .active > a:focus {
           border: none;
       }
-      @media (min-width: 768px) {
+      @media (min-width: 301px) {
         &.nav-justified > li > a {
             border-bottom: none;
             @include radius($type: border-radius, $value: 0);

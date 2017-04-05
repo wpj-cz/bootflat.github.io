@@ -35,6 +35,10 @@ $tooltip-font-color:                     $white !default;
     &.bottom-right &-arrow {
         border-bottom-color: $tooltip-background-color;
     }
+    & a{
+      color:$tooltip-font-color;
+   }
+
   }
 
 }

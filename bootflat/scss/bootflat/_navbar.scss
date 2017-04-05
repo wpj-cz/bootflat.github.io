@@ -88,7 +88,7 @@ $navbar-inverse-background-color:            $black !default;
           background-color: $navbar-background-color;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 300px) {
           & .navbar-nav > li > a:hover,
           & .navbar-nav > li > a:focus {
               background-color: $navbar-background-color-active;
@@ -183,7 +183,7 @@ $navbar-inverse-background-color:            $black !default;
           background-color: $navbar-inverse-background-color;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 300px) {
           & .navbar-nav > li > a:hover,
           & .navbar-nav > li > a:focus {
               background-color: $navbar-inverse-background-color;

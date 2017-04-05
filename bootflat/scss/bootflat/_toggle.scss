@@ -6,8 +6,10 @@ $toggle-checkbox-opacity:               0 !default;
 $toggle-transition-value:               all .25s ease-in-out !default;
 
 $toggle-default-background-color:		$white !default;
-$toggle-checked-background-color:		$grass-light !default;
+$toggle-checked-background-color:		#24d36b !default;
 $toggle-disabled-background-color:		$lightgray-dark !default;
+$toggle-red-background-color:		#DA4453 !default;
+
 
 $toggle-handle-width:					50px !default;
 $toggle-handle-height:					32px !default;
@@ -18,7 +20,7 @@ $toggle-control-height:					30px !default;
 $toggle-control-radius:					30px !default;
 
 $toggle-shadow:                         inset 0 0 0 1px lighten($mediumgray-dark, 5%) !default;
-$toggle-control-shadow:                 inset 0 0 0 1px lighten($mediumgray-dark, 5%), 1px 1px 1px lighten($mediumgray-dark, 10%) !default;
+$toggle-control-shadow:                 inset 0 0 0 1px lighten($mediumgray-dark, 3%), 1px 1px 1px lighten($mediumgray-light, 2%) !default;
 $toggle-checked-shadow:                 inset 0 0 0 1px $lightgray-light, 1px 1px 1px lighten($mediumgray-dark, 10%) !default;
 
 // Exports
@@ -42,6 +44,17 @@ $toggle-checked-shadow:                 inset 0 0 0 1px $lightgray-light, 1px 1p
 		text-indent: -100000px;
 		@include opacity($opacity: $toggle-checkbox-opacity, $filter: true);
 	}
+   
+   &.toggle-red{
+      & input[type="checkbox"]:checked + .handle:before,
+      & input[type="radio"]:checked + .handle:before {
+         background-color: $toggle-red-background-color;
+      }
+      & input[type="checkbox"]:checked + .handle,
+      & input[type="radio"]:checked + .handle {
+         @include box-shadow(inset 0 0 0 1px #DA4453);
+      }
+   }
 
 	& .handle {
 		display: block;
@@ -68,7 +81,6 @@ $toggle-checked-shadow:                 inset 0 0 0 1px $lightgray-light, 1px 1p
 			background-color: $toggle-default-background-color;
 			@include box-shadow($value:$toggle-control-shadow);
 		}
-
 	}
 	& input[type="checkbox"]:disabled + .handle,
 	& input[type="radio"]:disabled + .handle,
@@ -80,6 +92,10 @@ $toggle-checked-shadow:                 inset 0 0 0 1px $lightgray-light, 1px 1p
 		background-color: $toggle-disabled-background-color;
 	}
 
+	& input[type="checkbox"]:checked + .handle,
+	& input[type="radio"]:checked + .handle {
+		@include box-shadow(inset 0 0 0 1px #24d36b);
+	}
 	& input[type="checkbox"]:checked + .handle:before,
 	& input[type="radio"]:checked + .handle:before {
 		width: $toggle-handle-width;

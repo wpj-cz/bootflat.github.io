@@ -35,10 +35,6 @@ $search-icon-line-height:          30px !default;
       color: $form-font-color;
       border-color: $form-normal;
 
-      &,
-      &:focus {
-          @include box-shadow($value: none);
-      }
       &:focus {
           border-color: $form-primary;
       }
@@ -142,11 +138,9 @@ $search-icon-line-height:          30px !default;
       }
       & .form-control {
           border-color: $message-success;
-          @include box-shadow($value: none);
       }
       & .form-control:focus {
           border-color: $message-success;
-          @include box-shadow($value: none);
       }
       & .input-group-addon {
           background-color: $message-success;
@@ -167,11 +161,9 @@ $search-icon-line-height:          30px !default;
       }
       & .form-control {
           border-color: $message-warning;
-          @include box-shadow($value: none);
       }
       & .form-control:focus {
           border-color: $message-warning;
-          @include box-shadow($value: none);
       }
       & .input-group-addon {
           background-color: $message-warning;
@@ -192,11 +184,9 @@ $search-icon-line-height:          30px !default;
       }
       & .form-control {
           border-color:  $message-danger;
-          @include box-shadow($value: none);
       }
       & .form-control:focus {
           border-color:  $message-danger;
-          @include box-shadow($value: none);
       }
       & .input-group-addon {
           background-color:  $message-danger;
