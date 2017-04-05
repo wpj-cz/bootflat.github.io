@@ -692,9 +692,6 @@ body .ui-draggable-dragging{
    @include box-shadow(0px 0px 3px rgba(0, 0, 0, 0.35));
    z-index:99;
 }
-.nav-tabs.nav-justified > li > a{
-   font-size:12px;
-}
 .text-disabled{
    color:#b0b0b0;
    

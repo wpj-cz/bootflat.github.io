@@ -1,0 +1,80 @@
+// Variables
+//------------------------------------------------------
+
+
+// Exports
+//------------------------------------------------------
+
+@include exports("custom-form") {
+
+   .checkbox,
+   .radio {
+      display: inline-block;
+      margin: 0;
+      position: relative;
+   }
+
+   .checkbox > input[type=checkbox],
+   .radio > input[type=radio] {
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
+   }
+   .checkbox > input[type=checkbox] + label,
+   .radio > input[type=radio] + label {
+      cursor: pointer;
+      margin: 0 8px 0 0;
+      position: relative;
+   }
+
+   .checkbox > input[type=checkbox] + label:before,
+   .radio > input[type=radio] + label:before {
+      border: 1px solid #aab2bd;
+      content: "";
+      display: inline-block;
+      pointer-events: none;
+      background-color: white;
+      margin: 0 9px 0 0;
+      user-select: none;
+      vertical-align: middle;
+      width:  20px;
+      height: 20px;
+      position: relative;
+      top: -1px;
+   }
+
+   .checkbox > input[type=checkbox]:checked + label:before,
+   .radio > input[type=radio]:checked + label:before {
+      background: url(/admin/static/images/icheck.png) no-repeat;
+      background-position: -23px -1px;
+      border-color: #2494f2;
+   }
+
+   .checkbox > input[type=checkbox]:focus + label:before,
+   .checkbox > input[type=checkbox]:active + label:before,
+   .radio > input[type=radio]:focus + label:before,
+   .radio > input[type=radio]:active + label:before {
+      border-color: #2494f2;
+   }
+
+   .checkbox > input[type=checkbox]:disabled + label,
+   .radio > input[type=radio]:disabled + label {
+      cursor: not-allowed;
+   }
+
+   .checkbox > input[type=checkbox]:disabled + label:before,
+   .radio > input[type=radio]:disabled + label:before {
+      background-color: #dbdbdb;
+      border-color: #b4b4b4;
+      cursor: not-allowed;
+   }
+
+   .radio > input[type=radio] + label:before {
+      border-radius: 50%;
+   }
+
+   .radio > input[type=radio]:checked + label:before {
+      background-position: -111px -1px;
+      border-color: transparent;
+   }
+}
