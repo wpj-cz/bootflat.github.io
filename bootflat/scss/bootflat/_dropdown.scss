@@ -1,6 +1,6 @@
 // Variables
 //------------------------------------------------------
-$dropdown-background-color:               $darkgray-dark !default;
+$dropdown-background-color:               $white;
 $dropdown-background-color-hover:         $darkgray-light !default;
 
 $dropdown-normal:                         $mediumgray-dark !default;
@@ -25,8 +25,13 @@ $dropdown-font-weight:                    700 !default;
    * --------------------------------------------------
    */
   .dropdown-menu {
-      border: none;
       background-color: $dropdown-background-color;
+      font-size: 12px;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-top-width: 0;
+      margin-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
 
       & .dropdown-header {
           padding: $dropdown-padding;
@@ -36,17 +41,18 @@ $dropdown-font-weight:                    700 !default;
       }
 
       & li a {
-          padding: $dropdown-padding;
-          color: $dropdown-font-color-light;
+          color: #333;
+          padding: 8px 20px;
       }
       & li a:hover,
       & li a:focus,
       & .active a,
       & .active a:hover,
       & .active a:focus{
-          color: $dropdown-font-color-light;
-          background-color: $dropdown-background-color-hover;
           outline: none;
+          background-color: $aqua-dark;
+          color: #fff;
+          cursor: pointer;
       }
       & .disabled a,
       & .disabled a:hover,
